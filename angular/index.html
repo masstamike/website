@@ -1,0 +1,49 @@
+<!-- DOCTYPE html -->
+<html>
+<head>
+  <title>Michael Sawyer</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <script src="controllers.js"></script>
+</head>
+  <body>
+  <div id="main" ng-app="devApp" ng-controller="HomeController as homec">
+    <h1>Welcome to my Angular.JS testbed.</h1>
+    <h2>Below is a developing Angular.JS front-end for my DOI project.</h2>
+    Notice how the links below are dynamicaly added once they are retrieved
+    from the <a href="/doi">doi</a> back-end.
+    <br>
+    <input placeholder="Search" ng-model="searchText.$">
+    <ul>
+      <li ng-repeat="item in homec.DoiItems |
+          filter:searchText track by $index">
+          <a ng-href="http://{{homec.urls[$index]}}">
+            <h3>{{item.name_doi}}</h3>
+          </a>
+          {{item.description}}<br>
+      </li>
+        <li>
+          <a ng-href="http://{{homec.url}}"><h3>{{homec.name}}</h3></a>
+          {{homec.description}}
+        </li>
+      <form style="border-style: ridge; border-width: 5px;" name="formOne"
+            ng-submit="homec.submit()">
+        <h3>Add new DOI</h3>
+        <textarea placeholder="DOI Name" ng-model="homec.name" required>
+        </textarea><br>
+        <textarea type="url" placeholder="Paste URL here" ng-model="homec.url"
+                  required>
+        </textarea><br>
+        <textarea placeholder="Description" ng-model="homec.description"
+                  required>
+        </textarea><br>
+        <input type="submit" value="Submit"/>
+      </form>
+    </ul>
+  </div>
+  <div>
+    Questions or comments? Send them to
+    <a href="mailto:michaelsawyer92@gmail.com">Michael Sawyer</a>
+  </div>
+  </body>
+</html>
