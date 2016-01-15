@@ -8,4 +8,4 @@ require('./app/routes')(app);
 app.use(express.static(__dirname));
 
 // Starts listening on port
-app.listen(process.env.PORT || 80);
+app.listen(process.env.PORT || 8080);
