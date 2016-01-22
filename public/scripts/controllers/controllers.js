@@ -1,7 +1,8 @@
-var homeApp = angular.module('homeApp', []);
+'use strict';
+
+var homeApp = angular.module('homeApp', ['ngRoute']);
 
 homeApp.controller('HomePageController', ['$interval', function($interval) {
-  cont = this;
   this.active=1;
 //  var move = $interval(moveActive, 8000, 5);
   this.isSelected = function(selected) {
@@ -13,6 +14,14 @@ homeApp.controller('HomePageController', ['$interval', function($interval) {
   };
 
 }]);
+
+homeApp.config(function($routeProvider) {
+    $routeProvider
+        .when('/', {
+            templateUrl: 'views/main.html',
+            controller:  'MainCtrl'
+        })
+})
 
 function moveActive() {
     cont.active += 1;

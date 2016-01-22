@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var app = express();
 
@@ -10,4 +12,4 @@ app.use(express.static(__dirname + "/public"));
 // Starts listening on port
 app.listen(process.env.PORT || 8080);
 
-exports = module.exports = app;
+var exports = module.exports = app;

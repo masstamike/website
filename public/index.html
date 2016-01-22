@@ -1,9 +1,10 @@
 <!-- DOCTYPE html -->
 <html>
 <head>
-  <title>Michael Sawyer</title>
+    <title>Michael Sawyer</title>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="scripts/controllers/controllers.js"></script>
     <script src="owl/owl-carousel/owl.carousel.js"></script>
@@ -12,164 +13,28 @@
     <!-- Default Owl Theme -->
     <link rel="stylesheet" href="owl/owl-carousel/owl.theme.css">
 </head>
-  <body ng-app="homeApp" ng-controller="HomePageController as ctrl">
-  <div id="main">
+<body ng-app="homeApp" ng-controller="HomePageController as ctrl">
+<div id="main">
     <h1>Welcome to Michael A. Sawyer's Webpage</h1>
-    <div class="owl-carousel">
-      <div><img src="Pictures/SF_small.jpg" width=50%></img></div>
-      <div><img src="Pictures/classy_small.jpg" width=50%></img></div>
-      <div><img src="Pictures/baking_cookies_small.jpg" width=50%></img></div>
-      <div><img src="Pictures/run4food_small.jpg" width=50%></img></div>
-      <div><img src="Pictures/uncle_on_shoulders_small.jpg" width=50%></img></div>
-    </div>
-
     <ul class="nav nav-tabs">
-      <li ng-class="{active:ctrl.active === 1}">
-        <a ng-click="ctrl.setActive(1)" data-toggle="tab">About
-        </a>
-      </li>
-      <!--li ng-class="{active:ctrl.active === 2}">
-        <a ng-click="ctrl.setActive(2)" 
-          data-toggle="tab">Word Ladder
-        </a>
-      </li>
-      <li ng-class="{active:ctrl.active === 3}">
-        <a ng-click="ctrl.setActive(3)" 
-          data-toggle="tab">DOI
-        </a>
-      </li>
-      <li ng-class="{active:ctrl.active === 4}">
-        <a ng-click="ctrl.setActive(4)" 
-          data-toggle="tab">Social Image
-        </a>
-      </li>
-      <li ng-class="{active:ctrl.active === 5}">
-        <a ng-click="ctrl.setActive(5)" data-toggle="tab">Quiz
-        </a>
-      </li-->
+        <li ng-class="{active:ctrl.active === 1}">
+            <a ng-click="ctrl.setActive(1)" data-toggle="tab">About
+            </a>
+        </li>
     </ul>
     <div id="myTabContent" class="tab-content">
-    <div ng-show="ctrl.active === 1" class="tab-pane fade active in">
-      <p>
-        <h2>About The Author:</h2>
-          Michael Sawyer is a recent CSU, Chico grad who has been studying
-          Computer Science with a minor in Mathematics. He has ranked in the
-          97th percentile (top 3%) on a <a href=
-          "http://www.ets.org/s/mft/pdf/acdg_computer_science.pdf">
-          senior exit exam</a>, and has completed an extended
-          internship at Hewlett-Packard, and is currently a DevOps Engineer
-          at Veeva Systems in Pleasanton, CA.
-          Michael Sawyer also has experience in software defined
-          networks. Open Source contributions include <a href=
-          "http://www.mixxx.org">
-          Mixxx</a>, as well as others found on his <a href=
-          "https://github.com/masstamike">GitHub</a>. Resume can be found at the
-          bottom of the page. Other notable projects include <a href=
-          "https://play.google.com/store/apps/details?id=com.bustr">Bustr</a>,
-          a social media android app.
-        <h2>About The Page:</h2>
-          This home page is an evolving page created by Michael A Sawyer.
-          It is a test bed for learning Angular.js and Single Page Applications
-          in general. More content to come soon including a Ruby on Rails
-          application that also leverages Angular. Soon to come is a dynamic app
-          in development for a relative's wedding.
-          <br>
-        <br>
-        <br>
-      </p>
+        <div ng-view=""></div>
     </div>
-    <div ng-show="ctrl.active === 2" class="tab-pane fade active in">
-      <p>
-        <h2>Word Ladder</h2>
-        The word ladder is a game in which you try to step from a begin goal,
-        to an end goal by changing each word in between by only one letter.
-        <br>
-        <br>
-        <a href="/wladder">Play the Word Ladder!</a>
-        <br>
-        <h3 style="text-align:left">Future goals:</h3>
-        <ul>
-          <li style="text-align:left">
-            Check to see if it is possible to reach end word from start word.
-          </li>
-        </ul>
-      </p>
+    <div id="footer">
+        <div>
+            Questions or comments? Send them to
+            <a href="mailto:michaelsawyer92@gmail.com">Michael Sawyer</a><br>
+            <a href="http://michaelasawyer.com:8080/Resume.pdf">Resume</a> |
+            <a href="http://michaelasawyer.com:8080/RecLetter.pdf">
+                Letter of Recommendation</a> |
+            <a href="http://www.linkedin.com/in/michaelasawyer">LinkedIn</a>
+        </div>
     </div>
-    <div ng-show="ctrl.active === 3" class="tab-pane fade active in">
-      <p>
-        <h2>DOI</h2>
-        The DOI assignment was to create a fully functional Digital Object
-        Identifier web application.
-      </p>
-      <br>
-      <a href="/doi">DOI</a>
-      <br>
-      <h3 style="text-align:left">Future goals:</h3>
-      <ul>
-        <li style="text-align:left">
-          Angular UI
-        </li>
-      </ul>
-    </div>
-    <div ng-show="ctrl.active === 4" class="tab-pane fade active in">
-      <p>
-        <h2>Image Social Media</h2>
-        The Image Social Media Site assignment was to create a social media
-        site, where users could upload images and share them with specific
-        users, or, allow public access to the image.<br>
-        This project featured many-to-many relationships, as well as the ability
-        to upload images as well as gifs.
-      </p>
-      <br>
-      <a href="/img">Image Social Media Site</a>
-      <br>
-      <h3 style="text-align:left">Future goals:</h3>
-      <ul>
-        <li style="text-align:left">
-          Fix rendering of partial (Just need to add '=' after &lt;%)
-        </li>
-        <li style="text-align:left">
-          Drop down box to add permission to see image.
-        </li>
-        <li style="text-align:left">
-          UI fixes
-        </li>
-      </ul>
-    </div>
-    <div ng-show="ctrl.active === 5" class="tab-pane fade active in">
-      <p>
-        <h2>Quiz</h2>
-        Quiz Helper was my final assignment. This was an open ended assignment
-        designed to demonstrate our knowledge of Ruby on Rails. This project also
-        featured many-to-many and one-to-many relationships.
-      </p>
-      <br>
-      <a href="/quiz">Quiz</a>
-      <br>
-      <h3 style="text-align:left">Future goals:</h3>
-      <ul>
-        <li style="text-align:left">
-          Pop up window to answer questions, or embedded under questions.
-        </li>
-        <li style="text-align:left">
-          Users attached to answer. (Will lose anonymity, perhaps as option?)
-        </li>
-        <li style="text-align:left">
-          Only allow users to answer quizzes once.
-        </li>
-      </ul>
-    </div>
-    </div>
-  </div>
-  <div id="footer">
-    <div>
-      Questions or comments? Send them to
-      <a href="mailto:michaelsawyer92@gmail.com">Michael Sawyer</a><br>
-      <a href="http://michaelasawyer.com:8080/Resume.pdf">Resume</a> | 
-      <a href="http://michaelasawyer.com:8080/RecLetter.pdf">
-        Letter of Recommendation</a> |
-      <a href="http://www.linkedin.com/in/michaelasawyer">LinkedIn</a>
-    </div>
-  </div>
-  </body>
+</div>
+</body>
 </html>
