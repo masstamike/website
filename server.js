@@ -5,7 +5,9 @@ var app = express();
 require('./app/routes')(app);
 
 // To serve up resources (css,js,etc)
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + "/public"));
 
 // Starts listening on port
 app.listen(process.env.PORT || 8080);
+
+exports = module.exports = app;
