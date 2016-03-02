@@ -18,14 +18,15 @@ body {
   margin: 0;
   height:100%;
 }
-#footer {position: relative;
-  margin-top: -50px;
+#footer {
+  position: absolute;
+  bottom: 0px;
   height: 50px;
-  clear:both;
+  width: 100%;
 }
-#main{min-height:100%;
+#main{
+  min-height:100%;
   overflow:auto;
-  padding-bottom: 50px;
 }
 article,
 aside,

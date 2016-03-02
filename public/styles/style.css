@@ -3,3 +3,7 @@ p {
     color: red;
     background-color: whitesmoke;
 }
+
+div > div.center {
+    margin: 0 auto;
+}

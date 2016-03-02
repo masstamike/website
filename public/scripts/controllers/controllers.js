@@ -2,18 +2,16 @@
 
 var homeApp = angular.module('homeApp', ['ngRoute']);
 
-homeApp.controller('HomePageController', ['$interval', function($interval) {
+homeApp.controller('HomePageController', function() {
   this.active=1;
-//  var move = $interval(moveActive, 8000, 5);
   this.isSelected = function(selected) {
     return active===selected;
   };
   this.setActive = function(activate) {
     this.active = activate || 1;
-//    $interval.cancel(move);
   };
 
-}]);
+});
 
 homeApp.config(function($routeProvider) {
     $routeProvider
