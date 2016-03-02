@@ -18,11 +18,7 @@ homeApp.config(function($routeProvider) {
         .when('/', {
             templateUrl: 'views/main.html',
             controller:  'MainCtrl'
-        })
-        .when('/beer', {
-            templateUrl: 'views/beer.html',
-            controller: 'BeerCtrl'
-        })
+        });
 });
 
 function moveActive() {

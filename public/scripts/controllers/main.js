@@ -4,8 +4,5 @@
 'use strict';
 
 angular.module('homeApp')
-    .controller('BeerCtrl', function() {
-    })
     .controller('MainCtrl', function () {
-
 });
