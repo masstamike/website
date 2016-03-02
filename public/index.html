@@ -17,6 +17,13 @@
 <body ng-app="homeApp" ng-controller="HomePageController as ctrl">
 <div id="main">
     <h1>Welcome to Michael A. Sawyer's Webpage</h1>
+    <div class="owl-carousel">
+        <div><img src="Pictures/SF_small.jpg" width=50%/></div>
+        <div><img src="Pictures/classy_small.jpg" width=50%/></div>
+        <div><img src="Pictures/baking_cookies_small.jpg" width=50%/></div>
+        <div><img src="Pictures/run4food_small.jpg" width=50%/></div>
+        <div><img src="Pictures/uncle_on_shoulders_small.jpg" width=50%/></div>
+    </div>
     <ul class="nav nav-tabs">
         <li ng-class="{active:ctrl.active === 1}">
             <a ng-click="ctrl.setActive(1)" data-toggle="tab">About
