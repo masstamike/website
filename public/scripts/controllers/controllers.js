@@ -19,7 +19,11 @@ homeApp.config(function($routeProvider) {
             templateUrl: 'views/main.html',
             controller:  'MainCtrl'
         })
-})
+        .when('/beer', {
+            templateUrl: 'views/beer.html',
+            controller: 'BeerCtrl'
+        })
+});
 
 function moveActive() {
     cont.active += 1;
