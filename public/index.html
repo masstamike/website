@@ -3,27 +3,12 @@
 <head>
     <title>Michael Sawyer</title>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="scripts/controllers/controllers.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="owl/owl-carousel/owl.carousel.js"></script>
-    <!-- Basic Owl stylesheet -->
-    <link rel="stylesheet" href="owl/owl-carousel/owl.carousel.css">
-    <!-- Default Owl Theme -->
-    <link rel="stylesheet" href="owl/owl-carousel/owl.theme.css">
 </head>
 <body ng-app="homeApp" ng-controller="HomePageController as ctrl">
 <div id="main">
     <h1>Welcome to Michael A. Sawyer's Webpage</h1>
-    <div class="owl-carousel">
-        <div><img src="Pictures/SF_small.jpg" width=50%/></div>
-        <div><img src="Pictures/classy_small.jpg" width=50%/></div>
-        <div><img src="Pictures/baking_cookies_small.jpg" width=50%/></div>
-        <div><img src="Pictures/run4food_small.jpg" width=50%/></div>
-        <div><img src="Pictures/uncle_on_shoulders_small.jpg" width=50%/></div>
-    </div>
     <ul class="nav nav-tabs">
         <li ng-class="{active:ctrl.active === 1}">
             <a ng-click="ctrl.setActive(1)" data-toggle="tab">About
